@@ -1,13 +1,12 @@
 Name: linux-firmware
-Version: 20170622
-Release: 3.1
+Version: 20180606
+Release: 1
 Summary: Firmware files used by the Linux kernel
 
 Group: System Environment/Kernel
 License: GPL, GPLv2, GPLv2+, GPLv3, MIT and Redistributable, no modification permitted
 URL: http://www.kernel.org/
-Source: https://code.citrite.net/rest/archive/latest/projects/XSU/repos/%{name}/archive?at=7d2c913dcd1be083350d97a8cb1eba24cfacbc8a&format=tar.gz&prefix=%{name}-%{version}#/%{name}.tar.gz
-Source1: https://repo.citrite.net/xs-local-contrib/amd/microcode/fam17h/0x08001213/microcode_amd_fam17h.bin
+Source: https://code.citrite.net/rest/archive/latest/projects/XSU/repos/%{name}/archive?at=d1147327232ec4616a66ab898df84f9700c816c1&format=tar.gz&prefix=%{name}-%{version}#/%{name}.tar.gz
 BuildArch: noarch
 Requires: udev
 BuildRequires:  kernel-devel
@@ -17,7 +16,6 @@ Firmware files required for some devices to operate.
 
 %prep
 %autosetup -p1
-cp %{SOURCE1} amd-ucode/
 
 %build
 # Remove wifi and other firmware
@@ -69,6 +67,10 @@ cp %{SOURCE1} amd-ucode/
 /lib/firmware/*
 
 %changelog
+* Wed Jun 27 2018 Ross Lagerwall <ross.lagerwall@citrix.com> - 20180606-1
+- Update to latest version.
+- Drop extra AMD family 17h microcode
+
 * Wed Dec 20 2017 Simon Rowe <simon.rowe@citrix.com> 20170622-3
 - Add AMD family 17h microcode
 * Tue Sep 05 2017 Sergey Dyasly <sergey.dyasli@citrix.com> 20170622-2
