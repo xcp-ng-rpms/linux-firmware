@@ -1,6 +1,6 @@
 Name: linux-firmware
 Version: 20180606
-Release: 1
+Release: 1%{dist}
 Summary: Firmware files used by the Linux kernel
 
 Group: System Environment/Kernel
