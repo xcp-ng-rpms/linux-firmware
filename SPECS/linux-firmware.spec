@@ -1,12 +1,18 @@
 Name: linux-firmware
 Version: 20180606
-Release: 1%{dist}
+Release: 2%{?dist}
 Summary: Firmware files used by the Linux kernel
 
 Group: System Environment/Kernel
 License: GPL, GPLv2, GPLv2+, GPLv3, MIT and Redistributable, no modification permitted
 URL: http://www.kernel.org/
-Source: https://code.citrite.net/rest/archive/latest/projects/XSU/repos/%{name}/archive?at=d1147327232ec4616a66ab898df84f9700c816c1&format=tar.gz&prefix=%{name}-%{version}#/%{name}.tar.gz
+
+Source0: https://code.citrite.net/rest/archive/latest/projects/XSU/repos/linux-firmware/archive?at=d1147327232ec4616a66ab898df84f9700c816c1&format=tar.gz&prefix=linux-firmware-20180606#/linux-firmware.tar.gz
+Source1: https://repo.citrite.net/xs-local-contrib/chelsio/chelsio_firmware.tgz
+
+
+Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XSU/repos/linux-firmware/archive?at=d1147327232ec4616a66ab898df84f9700c816c1&format=tar.gz&prefix=linux-firmware-20180606#/linux-firmware.tar.gz) = d1147327232ec4616a66ab898df84f9700c816c1
+
 BuildArch: noarch
 Requires: udev
 BuildRequires:  kernel-devel
@@ -16,6 +22,7 @@ Firmware files required for some devices to operate.
 
 %prep
 %autosetup -p1
+tar zxvf %{SOURCE1}
 
 %build
 # Remove wifi and other firmware
@@ -67,6 +74,9 @@ Firmware files required for some devices to operate.
 /lib/firmware/*
 
 %changelog
+* Thu Mar 07 2019 Thomas Mckelvey <thomas.mckelvey@citrix.com> - 20180606-2
+- Update chelsio firmware version to 1.22.9.0
+
 * Wed Jun 27 2018 Ross Lagerwall <ross.lagerwall@citrix.com> - 20180606-1
 - Update to latest version.
 - Drop extra AMD family 17h microcode
