@@ -1,6 +1,6 @@
 Name: linux-firmware
 Version: 20190314
-Release: 1
+Release: 2
 Summary: Firmware files used by the Linux kernel
 
 Group: System Environment/Kernel
@@ -8,6 +8,8 @@ License: GPL, GPLv2, GPLv2+, GPLv3, MIT and Redistributable, no modification per
 URL: http://www.kernel.org/
 
 Source0: https://code.citrite.net/rest/archive/latest/projects/XSU/repos/linux-firmware/archive?at=7bc246451318b3536d9bfd3c4e46d541a9831b33&format=tar.gz&prefix=linux-firmware-20190314#/linux-firmware.tar.gz
+Source1: https://repo.citrite.net/xs-local-contrib/amd/microcode/15112021/microcode_amd_fam17h.bin
+Source2: https://repo.citrite.net/xs-local-contrib/amd/microcode/15112021/microcode_amd_fam19h.bin
 
 
 
@@ -20,6 +22,7 @@ Firmware files required for some devices to operate.
 
 %prep
 %autosetup -p1
+cp %{SOURCE1} %{SOURCE2} amd-ucode/
 
 %build
 # Remove wifi and other firmware
@@ -71,6 +74,9 @@ Firmware files required for some devices to operate.
 /lib/firmware/*
 
 %changelog
+* Fri Nov 19 2021 Igor Druzhinin <igor.druzhinin@citrix.com> - 20190314-2
+- CP-38643: Update AMD microcode for Fam17h and Fam19h
+
 * Thu Mar 21 2019 Ross Lagerwall <ross.lagerwall@citrix.com> - 20190314-1
 - Update to latest version
 - Drop extra chelsio firmware
