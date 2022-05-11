@@ -1,6 +1,6 @@
 Name: linux-firmware
 Version: 20190314
-Release: 3%{?dist}
+Release: 4%{?dist}
 Summary: Firmware files used by the Linux kernel
 
 Group: System Environment/Kernel
@@ -8,8 +8,8 @@ License: GPL, GPLv2, GPLv2+, GPLv3, MIT and Redistributable, no modification per
 URL: http://www.kernel.org/
 
 Source0: https://code.citrite.net/rest/archive/latest/projects/XSU/repos/linux-firmware/archive?at=7bc246451318b3536d9bfd3c4e46d541a9831b33&format=tar.gz&prefix=linux-firmware-20190314#/linux-firmware.tar.gz
-Source1: https://repo.citrite.net/xs-local-contrib/amd/microcode/2022-02-14/microcode_amd_fam17h.bin
-Source2: https://repo.citrite.net/xs-local-contrib/amd/microcode/2022-02-14/microcode_amd_fam19h.bin
+Source1: https://repo.citrite.net/xs-local-contrib/amd/microcode/2022-04-11/microcode_amd_fam17h.bin
+Source2: https://repo.citrite.net/xs-local-contrib/amd/microcode/2022-04-11/microcode_amd_fam19h.bin
 
 
 
@@ -74,6 +74,9 @@ cp %{SOURCE1} %{SOURCE2} amd-ucode/
 /lib/firmware/*
 
 %changelog
+* Fri May 6 2022 Andrew Cooper <andrew.cooper3@citrix.com> - 20190314-4
+* Update AMD microcode to the 2022-04-11 drop
+
 * Tue Mar 1 2022 Andrew Cooper <andrew.cooper3@citrix.com> - 20190314-3
 - Update AMD microcode for Fam17h and Fam19h
 
