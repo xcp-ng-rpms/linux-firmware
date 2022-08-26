@@ -1,18 +1,17 @@
+%global package_speccommit e2db0a7fa1dfba4496c26861070edecb6a544b1b
+%global usver 20211027
+%global xsver 2
+%global xsrel %{xsver}%{?xscount}%{?xshash}
+%global package_srccommit f5d519563ac9d2d1f382a817aae5ec5473811ac8
 Name: linux-firmware
-Version: 20190314
-Release: 4%{?dist}
+Version: 20211027
+Release: %{?xsrel}%{?dist}
 Summary: Firmware files used by the Linux kernel
 
 Group: System Environment/Kernel
 License: GPL, GPLv2, GPLv2+, GPLv3, MIT and Redistributable, no modification permitted
 URL: http://www.kernel.org/
-
-Source0: https://code.citrite.net/rest/archive/latest/projects/XSU/repos/linux-firmware/archive?at=7bc246451318b3536d9bfd3c4e46d541a9831b33&format=tar.gz&prefix=linux-firmware-20190314#/linux-firmware.tar.gz
-Source1: https://repo.citrite.net/xs-local-contrib/amd/microcode/2022-04-11/microcode_amd_fam17h.bin
-Source2: https://repo.citrite.net/xs-local-contrib/amd/microcode/2022-04-11/microcode_amd_fam19h.bin
-
-
-
+Source0: linux-firmware.tar.gz
 BuildArch: noarch
 Requires: udev
 BuildRequires:  kernel-devel
@@ -22,29 +21,40 @@ Firmware files required for some devices to operate.
 
 %prep
 %autosetup -p1
-cp %{SOURCE1} %{SOURCE2} amd-ucode/
 
 %build
+# Remove AMD Microcode (packaged separately)
+%{__rm} -rf amd-ucode LICENSE.amd-ucode
+
 # Remove wifi and other firmware
+%{__rm} dvb*
 %{__rm} iwlwifi*
 %{__rm} v4l*
 %{__rm} *.sbcf
 %{__rm} -rf ar3k
 %{__rm} -rf ath10k
+%{__rm} -rf ath11k
 %{__rm} -rf ath6k
 %{__rm} -rf ath9k_htc
 %{__rm} -rf brcm
 %{__rm} -rf carl9170fw
+%{__rm} -rf cypress
 %{__rm} -rf dabusb
+%{__rm} -rf dpaa2
 %{__rm} -rf libertas
 %{__rm} -rf liquidio
+%{__rm} -rf mediatek
+%{__rm} -rf mellanox/mlxsw_spectrum*
+%{__rm} -rf meson
 %{__rm} -rf mrvl
 %{__rm} -rf mwlwifi
+%{__rm} -rf netronome
+%{__rm} -rf qca
+%{__rm} -rf qcom
+%{__rm} -rf rtl_bt
 %{__rm} -rf rtlwifi
 %{__rm} -rf ti-connectivity
 %{__rm} -rf ueagle-atm
-%{__rm} -rf qcom
-%{__rm} -rf netronome
 
 # Remove source files we don't need to install
 %{__rm} -f usbdux/*dux */*.asm Makefile configure check_whence.py
@@ -74,14 +84,14 @@ cp %{SOURCE1} %{SOURCE2} amd-ucode/
 /lib/firmware/*
 
 %changelog
-* Fri May 6 2022 Andrew Cooper <andrew.cooper3@citrix.com> - 20190314-4
-* Update AMD microcode to the 2022-04-11 drop
+* Fri Apr 8 2022 Andrew Cooper <andrew.cooper3@citrix.com> 20211027-2
+- Exclude AMD microcode.  Moved to new package.
 
-* Tue Mar 1 2022 Andrew Cooper <andrew.cooper3@citrix.com> - 20190314-3
-- Update AMD microcode for Fam17h and Fam19h
+* Wed Nov 17 2021 Igor Druzhinin <igor.druzhinin> - 20211027-1
+- CP-38643: Update to latest version
 
-* Fri Nov 19 2021 Igor Druzhinin <igor.druzhinin@citrix.com> - 20190314-2
-- CP-38643: Update AMD microcode for Fam17h and Fam19h
+* Wed Dec 02 2020 Ross Lagerwall <ross.lagerwall@citrix.com> - 20190314-2
+- CP-35517: Build for koji
 
 * Thu Mar 21 2019 Ross Lagerwall <ross.lagerwall@citrix.com> - 20190314-1
 - Update to latest version
