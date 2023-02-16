@@ -1,6 +1,6 @@
 Name: linux-firmware
 Version: 20190314
-Release: 5%{?dist}
+Release: 5.1%{?dist}
 Summary: Firmware files used by the Linux kernel
 
 Group: System Environment/Kernel
@@ -74,6 +74,9 @@ cp %{SOURCE1} %{SOURCE2} amd-ucode/
 /lib/firmware/*
 
 %changelog
+* Thu Feb 16 2023 Samuel Verschelde <stormi-xcp@ylix.fr> 20190314-5.1
+* Update AMD microcode to the 2023-02-10 drop
+
 * Fri Sep 30 2022 Andrew Cooper <andrew.cooper3@citrix.com> - 20190314-5
 * Update AMD microcode to the 2022-09-30 drop
 
