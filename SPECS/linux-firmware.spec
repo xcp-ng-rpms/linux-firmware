@@ -1,21 +1,22 @@
+%global package_speccommit 89a40c824bbca75274f36baa6088dcbbb48226e8
+%global usver 20190314
+%global xsver 6
+%global xsrel %{xsver}%{?xscount}%{?xshash}
+%global package_srccommit 7bc246451318b3536d9bfd3c4e46d541a9831b33
 Name: linux-firmware
 Version: 20190314
-Release: 5
+Release: %{?xsrel}%{?dist}
 Summary: Firmware files used by the Linux kernel
 
 Group: System Environment/Kernel
 License: GPL, GPLv2, GPLv2+, GPLv3, MIT and Redistributable, no modification permitted
 URL: http://www.kernel.org/
-
-Source0: https://code.citrite.net/rest/archive/latest/projects/XSU/repos/linux-firmware/archive?at=7bc246451318b3536d9bfd3c4e46d541a9831b33&format=tar.gz&prefix=linux-firmware-20190314#/linux-firmware.tar.gz
-Source1: https://repo.citrite.net/xs-local-contrib/amd/microcode/2022-09-30/microcode_amd_fam17h.bin
-Source2: https://repo.citrite.net/xs-local-contrib/amd/microcode/2022-09-30/microcode_amd_fam19h.bin
-
-
-
+Source0: linux-firmware.tar.gz
 BuildArch: noarch
 Requires: udev
 BuildRequires:  kernel-devel
+Source1: microcode_amd_fam17h.bin
+Source2: microcode_amd_fam19h.bin
 
 %description
 Firmware files required for some devices to operate.
@@ -74,6 +75,9 @@ cp %{SOURCE1} %{SOURCE2} amd-ucode/
 /lib/firmware/*
 
 %changelog
+* Tue Feb 7 2023 Andrew Cooper <andrew.cooper3@citrix.com> 20190314-6
+* Update AMD microcode to the 2023-01-31 drop
+
 * Fri Sep 30 2022 Andrew Cooper <andrew.cooper3@citrix.com> - 20190314-5
 * Update AMD microcode to the 2022-09-30 drop
 
