@@ -1,6 +1,6 @@
-%global package_speccommit 89a40c824bbca75274f36baa6088dcbbb48226e8
+%global package_speccommit 3626664ad693136633a43cd43c003d6a8fa2e02a
 %global usver 20190314
-%global xsver 6
+%global xsver 7
 %global xsrel %{xsver}%{?xscount}%{?xshash}
 %global package_srccommit 7bc246451318b3536d9bfd3c4e46d541a9831b33
 Name: linux-firmware
@@ -75,14 +75,20 @@ cp %{SOURCE1} %{SOURCE2} amd-ucode/
 /lib/firmware/*
 
 %changelog
+* Thu May 11 2023 Samuel Verschelde <stormi-xcp@ylix.fr> - 20190314-7.1
+- Synced from hotfix XS82ECU1030
+- *** Upstream changelog ***
+- * Tue Apr 18 2023 Andrew Cooper <andrew.cooper3@citrix.com> 20190314-7
+- - Update to the 2023-04-13 drop.  Manually fix up the SSP-B0 date.
+
 * Thu Feb 23 2023 Gael Duperrey <gduperrey@vates.fr> 20190314-6.1
-* Synced from hotfix XS82ECU1026
+- Synced from hotfix XS82ECU1026
 - *** Upstream changelog ***
 - * Tue Feb 7 2023 Andrew Cooper <andrew.cooper3@citrix.com> 20190314-6
-- * Update AMD microcode to the 2023-01-31 drop
+- - Update AMD microcode to the 2023-01-31 drop
 
 * Thu Feb 16 2023 Samuel Verschelde <stormi-xcp@ylix.fr> 20190314-5.1
-* Update AMD microcode to the 2023-02-10 drop
+- Update AMD microcode to the 2023-02-10 drop
 
 * Fri Sep 30 2022 Andrew Cooper <andrew.cooper3@citrix.com> - 20190314-5
 * Update AMD microcode to the 2022-09-30 drop
