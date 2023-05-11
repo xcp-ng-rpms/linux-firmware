@@ -1,6 +1,6 @@
-%global package_speccommit 89a40c824bbca75274f36baa6088dcbbb48226e8
+%global package_speccommit 3626664ad693136633a43cd43c003d6a8fa2e02a
 %global usver 20190314
-%global xsver 6
+%global xsver 7
 %global xsrel %{xsver}%{?xscount}%{?xshash}
 %global package_srccommit 7bc246451318b3536d9bfd3c4e46d541a9831b33
 Name: linux-firmware
@@ -75,6 +75,9 @@ cp %{SOURCE1} %{SOURCE2} amd-ucode/
 /lib/firmware/*
 
 %changelog
+* Tue Apr 18 2023 Andrew Cooper <andrew.cooper3@citrix.com> 20190314-7
+- Update to the 2023-04-13 drop.  Manually fix up the SSP-B0 date.
+
 * Tue Feb 7 2023 Andrew Cooper <andrew.cooper3@citrix.com> 20190314-6
 * Update AMD microcode to the 2023-01-31 drop
 
