@@ -78,16 +78,16 @@ cp %{SOURCE1} %{SOURCE2} amd-ucode/
 * Thu May 11 2023 Samuel Verschelde <stormi-xcp@ylix.fr> - 20190314-7.1
 - Synced from hotfix XS82ECU1030
 - *** Upstream changelog ***
-- * Tue Apr 18 2023 Andrew Cooper <andrew.cooper3@citrix.com> 20190314-7
+- * Tue Apr 18 2023 Andrew Cooper <andrew.cooper3@citrix.com> - 20190314-7
 - - Update to the 2023-04-13 drop.  Manually fix up the SSP-B0 date.
 
-* Thu Feb 23 2023 Gael Duperrey <gduperrey@vates.fr> 20190314-6.1
+* Thu Feb 23 2023 Gael Duperrey <gduperrey@vates.fr> - 20190314-6.1
 - Synced from hotfix XS82ECU1026
 - *** Upstream changelog ***
-- * Tue Feb 7 2023 Andrew Cooper <andrew.cooper3@citrix.com> 20190314-6
+- * Tue Feb 7 2023 Andrew Cooper <andrew.cooper3@citrix.com> - 20190314-6
 - - Update AMD microcode to the 2023-01-31 drop
 
-* Thu Feb 16 2023 Samuel Verschelde <stormi-xcp@ylix.fr> 20190314-5.1
+* Thu Feb 16 2023 Samuel Verschelde <stormi-xcp@ylix.fr> - 20190314-5.1
 - Update AMD microcode to the 2023-02-10 drop
 
 * Fri Sep 30 2022 Andrew Cooper <andrew.cooper3@citrix.com> - 20190314-5
