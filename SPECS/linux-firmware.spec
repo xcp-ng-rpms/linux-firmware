@@ -1,6 +1,6 @@
-%global package_speccommit 3626664ad693136633a43cd43c003d6a8fa2e02a
+%global package_speccommit c6479d09f6d469a3659399f48b4642fdbf1b68e6
 %global usver 20190314
-%global xsver 7
+%global xsver 8
 %global xsrel %{xsver}%{?xscount}%{?xshash}
 %global package_srccommit 7bc246451318b3536d9bfd3c4e46d541a9831b33
 Name: linux-firmware
@@ -75,6 +75,10 @@ cp %{SOURCE1} %{SOURCE2} amd-ucode/
 /lib/firmware/*
 
 %changelog
+* Mon Jul 24 2023 Gael Duperrey <gduperrey@vates.fr> - 20190314-8.1
+- Synced from hotfix XS82ECU1041
+- Fixes for XSA-433 CVE-2023-20593
+
 * Thu May 11 2023 Samuel Verschelde <stormi-xcp@ylix.fr> - 20190314-7.1
 - Synced from hotfix XS82ECU1030
 - *** Upstream changelog ***
