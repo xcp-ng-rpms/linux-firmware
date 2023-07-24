@@ -1,6 +1,6 @@
-%global package_speccommit 3626664ad693136633a43cd43c003d6a8fa2e02a
+%global package_speccommit c6479d09f6d469a3659399f48b4642fdbf1b68e6
 %global usver 20190314
-%global xsver 7
+%global xsver 8
 %global xsrel %{xsver}%{?xscount}%{?xshash}
 %global package_srccommit 7bc246451318b3536d9bfd3c4e46d541a9831b33
 Name: linux-firmware
