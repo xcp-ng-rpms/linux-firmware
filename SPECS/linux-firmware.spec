@@ -1,6 +1,6 @@
-%global package_speccommit c6479d09f6d469a3659399f48b4642fdbf1b68e6
+%global package_speccommit e54fa94b530e053d0cb4b5f5b275eb69facb81e2
 %global usver 20190314
-%global xsver 8
+%global xsver 9
 %global xsrel %{xsver}%{?xscount}%{?xshash}
 %global package_srccommit 7bc246451318b3536d9bfd3c4e46d541a9831b33
 Name: linux-firmware
@@ -75,6 +75,18 @@ cp %{SOURCE1} %{SOURCE2} amd-ucode/
 /lib/firmware/*
 
 %changelog
+* Tue Aug 08 2023 Gael Duperrey <gduperrey@vates.fr> - 20190314-9
+- Synced from hotfix XS82ECU1045
+- *** Upstream changelog ***
+- * Wed Jul 26 2023 Alejandro Vallejo <alejandro.vallejo@cloud.com> 20190314-9
+- - Add new CPUs to the microcode blob:
+- - RS-B1 00a10f11: 2023-06-20, rev 0a10113e
+- - RS-B2 00a10f12: 2023-06-20, rev 0a10123e
+- - RSDN-A1 00aa0f01: 2023-06-19, rev 0aa00116
+- - RSDN-A2 00aa0f02: 2023-06-19, rev 0aa00212
+- * Fri Jul 21 2023 Alejandro Vallejo <alejandro.vallejo@cloud.com> 20190314-8
+- - Update to the 2023-07-19 drop.
+
 * Mon Jul 24 2023 Gael Duperrey <gduperrey@vates.fr> - 20190314-8.1
 - Synced from hotfix XS82ECU1041
 - Fixes for XSA-433 CVE-2023-20593
