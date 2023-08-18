@@ -75,7 +75,7 @@ cp %{SOURCE1} %{SOURCE2} amd-ucode/
 /lib/firmware/*
 
 %changelog
-* Tue Aug 08 2023 Gael Duperrey <gduperrey@vates.fr> - 20190314-9
+* Tue Aug 08 2023 Gael Duperrey <gduperrey@vates.fr> - 20190314-9.1
 - Synced from hotfix XS82ECU1045
 - *** Upstream changelog ***
 - * Wed Jul 26 2023 Alejandro Vallejo <alejandro.vallejo@cloud.com> 20190314-9
