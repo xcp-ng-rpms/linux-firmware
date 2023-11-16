@@ -1,6 +1,6 @@
-%global package_speccommit e54fa94b530e053d0cb4b5f5b275eb69facb81e2
+%global package_speccommit 0851f59b599a16f77964e08cfbfb46306131bde9
 %global usver 20190314
-%global xsver 9
+%global xsver 10
 %global xsrel %{xsver}%{?xscount}%{?xshash}
 %global package_srccommit 7bc246451318b3536d9bfd3c4e46d541a9831b33
 Name: linux-firmware
@@ -75,6 +75,16 @@ cp %{SOURCE1} %{SOURCE2} amd-ucode/
 /lib/firmware/*
 
 %changelog
+* Thu Nov 16 2023 Gael Duperrey <gduperrey@vates.tech> - 20190314-10.1
+- Synced from hotfix XS82ECU1057
+- *** Upstream changelog ***
+- * Mon Nov 6 2023 Andrew Cooper <andrew.cooper3@citrix.com> - 20190314-10
+- - Update to the 2023-10-19 AMD microcode drop
+-   Updated CPUs:
+-     RS-B1 00a10f11: 2023-06-20, rev 0a10113e -> 2023-09-06, rev 0a101144
+-     RS-B2 00a10f12: 2023-06-20, rev 0a10123e -> 2023-09-11, rev 0a101244
+-   RSDN-A2 00aa0f02: 2023-06-19, rev 0aa00212 -> 2023-09-11, rev 0aa00213
+
 * Tue Aug 08 2023 Gael Duperrey <gduperrey@vates.fr> - 20190314-9.1
 - Synced from hotfix XS82ECU1045
 - *** Upstream changelog ***
