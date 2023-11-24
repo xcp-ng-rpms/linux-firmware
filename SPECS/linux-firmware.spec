@@ -5,7 +5,7 @@
 %global package_srccommit 7bc246451318b3536d9bfd3c4e46d541a9831b33
 Name: linux-firmware
 Version: 20190314
-Release: %{?xsrel}.1%{?dist}
+Release: %{?xsrel}.2%{?dist}
 Summary: Firmware files used by the Linux kernel
 
 Group: System Environment/Kernel
@@ -18,12 +18,20 @@ BuildRequires:  kernel-devel
 Source1: microcode_amd_fam17h.bin
 Source2: microcode_amd_fam19h.bin
 
+# XCP-ng
+Source10: rtl8125a-3.fw
+Source11: rtl8125b-1.fw
+Source12: rtl8125b-2.fw
+
 %description
 Firmware files required for some devices to operate.
 
 %prep
 %autosetup -p1
 cp %{SOURCE1} %{SOURCE2} amd-ucode/
+
+# XCP-ng
+cp %{SOURCE10} %{SOURCE11} %{SOURCE12} rtl_nic/
 
 %build
 # Remove wifi and other firmware
@@ -75,6 +83,9 @@ cp %{SOURCE1} %{SOURCE2} amd-ucode/
 /lib/firmware/*
 
 %changelog
+* Fri Nov 24 2023 Samuel Verschelde <stormi-xcp@ylix.fr> - 20190314-10.2
+- Add firmware for rtl8125
+
 * Thu Nov 16 2023 Gael Duperrey <gduperrey@vates.tech> - 20190314-10.1
 - Synced from hotfix XS82ECU1057
 - *** Upstream changelog ***
