@@ -5,7 +5,7 @@
 %global package_srccommit f5d519563ac9d2d1f382a817aae5ec5473811ac8
 Name: linux-firmware
 Version: 20211027
-Release: %{?xsrel}%{?dist}
+Release: %{?xsrel}.1%{?dist}
 Summary: Firmware files used by the Linux kernel
 
 Group: System Environment/Kernel
@@ -16,11 +16,19 @@ BuildArch: noarch
 Requires: udev
 BuildRequires:  kernel-devel
 
+# XCP-ng
+Source10: rtl8125a-3.fw
+Source11: rtl8125b-1.fw
+Source12: rtl8125b-2.fw
+
 %description
 Firmware files required for some devices to operate.
 
 %prep
 %autosetup -p1
+
+# XCP-ng
+cp %{SOURCE10} %{SOURCE11} %{SOURCE12} rtl_nic/
 
 %build
 # Remove AMD Microcode (packaged separately)
@@ -84,6 +92,9 @@ Firmware files required for some devices to operate.
 /lib/firmware/*
 
 %changelog
+* Fri Nov 24 2023 Samuel Verschelde <stormi-xcp@ylix.fr> - 20211027-2.1
+- Add firmware for rtl8125
+
 * Fri Apr 8 2022 Andrew Cooper <andrew.cooper3@citrix.com> 20211027-2
 - Exclude AMD microcode.  Moved to new package.
 
