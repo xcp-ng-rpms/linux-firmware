@@ -1,11 +1,11 @@
-%global package_speccommit 0851f59b599a16f77964e08cfbfb46306131bde9
+%global package_speccommit 6688ab11280d1c0fe6644c212794c627dfcd8f70
 %global usver 20190314
-%global xsver 10
+%global xsver 11
 %global xsrel %{xsver}%{?xscount}%{?xshash}
 %global package_srccommit 7bc246451318b3536d9bfd3c4e46d541a9831b33
 Name: linux-firmware
 Version: 20190314
-Release: %{?xsrel}.2%{?dist}
+Release: %{?xsrel}.1%{?dist}
 Summary: Firmware files used by the Linux kernel
 
 Group: System Environment/Kernel
@@ -83,6 +83,21 @@ cp %{SOURCE10} %{SOURCE11} %{SOURCE12} rtl_nic/
 /lib/firmware/*
 
 %changelog
+* Wed May 15 2024 Gael Duperrey <gduperrey@vates.tech> - 20190314-11.1
+- Synced from hotfix XS82ECU1067
+- *** Upstream changelog ***
+- * Fri May 10 2024 Andrew Cooper <andrew.cooper3@citrix.com> - 20190314-11
+- - Update to the 2024-05-03 drop.
+-   Updated CPUs:
+-     ZP-B2 00800f12: 2021-11-11, rev 0800126e -> 2023-12-19, rev 0800126f
+-    SSP-B0 00830f10: 2023-08-16, rev 0830107b -> 2023-12-18, rev 0830107c
+-     GN-B0 00a00f10: 2023-06-09, rev 0a001079 -> 2024-02-26, rev 0a00107a
+-     GN-B1 00a00f11: 2023-08-23, rev 0a0011d3 -> 2024-02-23, rev 0a0011d5
+-     GN-B2 00a00f12: 2023-08-31, rev 0a001236 -> 2024-02-26, rev 0a001238
+-     RS-B1 00a10f11: 2023-09-06, rev 0a101144 -> 2024-02-23, rev 0a101148
+-     RS-B2 00a10f12: 2023-09-11, rev 0a101244 -> 2024-02-26, rev 0a101248
+-   RSDN-A2 00aa0f02: 2023-09-11, rev 0aa00213 -> 2024-02-28, rev 0aa00215
+
 * Fri Nov 24 2023 Samuel Verschelde <stormi-xcp@ylix.fr> - 20190314-10.2
 - Add firmware for rtl8125
 
