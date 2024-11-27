@@ -5,7 +5,7 @@
 %global package_srccommit 7bc246451318b3536d9bfd3c4e46d541a9831b33
 Name: linux-firmware
 Version: 20190314
-Release: %{?xsrel}.1%{?dist}
+Release: %{?xsrel}.2%{?dist}
 Summary: Firmware files used by the Linux kernel
 
 Group: System Environment/Kernel
@@ -83,6 +83,9 @@ cp %{SOURCE10} %{SOURCE11} %{SOURCE12} rtl_nic/
 /lib/firmware/*
 
 %changelog
+* Fri Nov 22 2024 David Morel <david.morel@vates.tech> - 20190314-11.2
+- Update AMD microcode to the 2024-11-21 drop
+
 * Wed May 15 2024 Gael Duperrey <gduperrey@vates.tech> - 20190314-11.1
 - Synced from hotfix XS82ECU1067
 - *** Upstream changelog ***
