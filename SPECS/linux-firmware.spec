@@ -5,7 +5,7 @@
 %global package_srccommit 7bc246451318b3536d9bfd3c4e46d541a9831b33
 Name: linux-firmware
 Version: 20190314
-Release: %{?xsrel}.2%{?dist}
+Release: %{?xsrel}.3%{?dist}
 Summary: Firmware files used by the Linux kernel
 
 Group: System Environment/Kernel
@@ -83,6 +83,26 @@ cp %{SOURCE10} %{SOURCE11} %{SOURCE12} rtl_nic/
 /lib/firmware/*
 
 %changelog
+* Thu Jul 10 2025 Gael Duperrey <gduperrey@vates.tech> - 20190314-11.3
+- Update AMD microcode to the 2025-06-26 drop initially redistributed by XenServer
+- Updated CPUs:
+    GN-B1 00a00f11: 2024-02-23, rev 0a0011d5 -> 2024-09-06, rev 0a0011d7
+    GN-B2 00a00f12: 2024-02-26, rev 0a001238 -> 2024-09-06, rev 0a00123b
+   CGL-B2 00a00f82: 2024-02-29, rev 0a00820c -> 2024-09-13, rev 0a00820d
+    RS-B1 00a10f11: 2024-02-23, rev 0a101148 -> 2024-09-06, rev 0a10114c
+    RS-B2 00a10f12: 2024-02-26, rev 0a101248 -> 2024-09-06, rev 0a10124c
+   STP-B1 00a10f81: 2024-02-27, rev 0a108108 -> 2024-09-11, rev 0a108109
+   VMR-B0 00a20f10: 2024-08-27, rev 0a20102d -> 2024-09-13, rev 0a20102e
+   VMR-B2 00a20f12: 2024-02-29, rev 0a201210 -> 2024-09-13, rev 0a201211
+   RMB-B1 00a40f41: 2024-02-29, rev 0a404107 -> 2024-09-13, rev 0a404108
+   CZN-A0 00a50f00: 2024-02-29, rev 0a500011 -> 2024-09-13, rev 0a500012
+   RPL-B2 00a60f12: 2024-02-27, rev 0a601209 -> 2024-09-11, rev 0a60120a
+   PHX-A1 00a70f41: 2024-02-28, rev 0a704107 -> 2024-09-11, rev 0a704108
+  HPT1-A2 00a70f52: 2024-02-28, rev 0a705206 -> 2024-09-11, rev 0a705208
+  PHX2-A0 00a70f80: 2024-02-28, rev 0a708007 -> 2024-09-11, rev 0a708008
+  HPT2-A0 00a70fc0: 2024-02-28, rev 0a70c005 -> 2024-09-11, rev 0a70c008
+  RSDN-A2 00aa0f02: 2024-02-28, rev 0aa00215 -> 2024-09-06, rev 0aa00216
+
 * Fri Nov 22 2024 David Morel <david.morel@vates.tech> - 20190314-11.2
 - Update AMD microcode to the 2024-11-21 drop
 
